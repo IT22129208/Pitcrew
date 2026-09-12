@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mechanicMainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E7EB"
+    tools:context=".MechanicMainActivity">
+
+    <!-- ================= FULLSCREEN MAPVIEW ================= -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/mechanicMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ================= TOP HEADER BAR ================= -->
+    <LinearLayout
+        android:id="@+id/mechanicTopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Left Mechanic Avatar Button -->
+        <FrameLayout
+            android:id="@+id/btnMechanicProfileAvatar"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_action_round"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:contentDescription="Mechanic Profile"
+                android:src="@drawable/ic_avatar_profile" />
+        </FrameLayout>
+
+        <!-- Spacer -->
+        <View
+            android:layout_width="16dp"
+            android:layout_height="1dp" />
+
+        <!-- Today Earning Header Pill -->
+        <LinearLayout
+            android:id="@+id/layoutTodayEarnings"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_earning_pill"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.04"
+                android:text="Today Earning"
+                android:textColor="#CBD5E1"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvTodayEarningAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
+                android:text="LKR 0.00"
+                android:textColor="#FFFFFF"
+                android:textSize="15.5sp"
+                android:textStyle="bold"
+                tools:text="LKR 0.00" />
+        </LinearLayout>
+
+        <!-- Right Recenter GPS Button -->
+        <FrameLayout
+            android:id="@+id/btnMechanicRecenterGps"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_action_round"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="Recenter GPS"
+                android:src="@drawable/ic_gps_crosshair" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- ================= BOTTOM DISPATCH PANELS ================= -->
+    <LinearLayout
+        android:id="@+id/bottomDispatchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/mechanicBottomNav">
+
+        <!-- ================= PANEL 1: IDLE SEARCHING STATE ================= -->
+        <LinearLayout
+            android:id="@+id/layoutSearchingJobPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <!-- Card: Searching for a job ... -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_mechanic_job_card"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="20dp">
+
+                <TextView
+                    android:id="@+id/tvSearchingJobTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Searching For a job ..."
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSearchingJobSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="No Jobs so far"
+                    android:textColor="#374151"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Refresh Button -->
+            <FrameLayout
+                android:id="@+id/btnMechanicRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_login_btn"
+                android:clickable="true"
+                android:elevation="4dp"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tvRefreshText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Refresh"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/pbRefreshRadar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/white"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- ================= PANEL 2: INCOMING SERVICE REQUEST CARD ================= -->
+        <LinearLayout
+            android:id="@+id/layoutIncomingRequestPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mechanic_job_card"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="20dp"
+            android:visibility="gone">
+
+            <!-- ETA Title -->
+            <TextView
+                android:id="@+id/tvIncomingEta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Calculating arrival time..."
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="4 min away (1.2 km)" />
+
+            <!-- Customer Details Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivIncomingCustomerAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="Customer Avatar"
+                    android:src="@drawable/ic_avatar_profile" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvIncomingCustomerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Indula Perera"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="Indula Perera" />
+
+                    <TextView
+                        android:id="@+id/tvIncomingCustomerContact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="sans-serif-bold"
+                        android:text="+94 712 563 2536 | ind@gmail.com"
+                        android:textColor="#1F2937"
+                        android:textSize="11sp"
+                        tools:text="+94 712 563 2536 | ind@gmail.com" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Breakdown Issue Description -->
+            <TextView
+                android:id="@+id/tvIncomingCause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="Flat Tire &amp; Low on Gas .."
+                android:textColor="#111827"
+                android:textSize="12.5sp"
+                tools:text="Flat Tire &amp; Low on Gas .." />
+
+            <!-- Payment Method -->
+            <TextView
+                android:id="@+id/tvIncomingPaymentMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="Payment Method : Card"
+                android:textColor="#1F2937"
+                android:textSize="12sp"
+                tools:text="Payment Method : Card" />
+
+            <!-- Price & Accept Button Action Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <!-- Left: Price Column -->
+                <LinearLayout
+                    android:id="@+id/layoutOfferPriceContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:text="Offer Price"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="(Tap to edit)"
+                            android:textColor="#64748B"
+                            android:textSize="10.5sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnEditOfferPriceTrigger"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_price_input"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp">
+
+                        <EditText
+                            android:id="@+id/etOfferPrice"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:importantForAutofill="no"
+                            android:inputType="none"
+                            android:text="LKR 6,580"
+                            android:textColor="@color/pitcrew_navy"
+                            android:textSize="13.5sp" />
+
+                        <ImageView
+                            android:id="@+id/ivEditPriceIcon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="Edit Price"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#64748B" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Right: Accept Button -->
+                <FrameLayout
+                    android:id="@+id/btnAcceptJob"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/bg_login_btn"
+                    android:clickable="true"
+                    android:elevation="3dp"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/tvAcceptText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Accept"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/pbAccepting"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ================= PANEL 2.5: WAITING FOR CUSTOMER APPROVAL ================= -->
+        <LinearLayout
+            android:id="@+id/layoutOfferWaitingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mechanic_job_card"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="20dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/pbWaitingApproval"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:indeterminateTint="@color/pitcrew_navy" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvWaitingApprovalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Offer Sent to Customer"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvWaitingApprovalSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Waiting for customer decision..."
+                        android:textColor="#4B5563"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Card with details -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_input_field"
+                android:orientation="vertical"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/tvWaitingCustomerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Customer: Indula Perera"
+                    android:textColor="@color/black"
+                    android:textSize="13.5sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvWaitingCustomerCause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Issue: Flat Tire"
+                    android:textColor="#475569"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Your Proposed Offer: "
+                        android:textColor="#334155"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvWaitingProposedPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_status_badge_green"
+                        android:fontFamily="sans-serif-black"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:text="LKR 8,500.00"
+                        android:textColor="#137333"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Actions Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btnWithdrawOffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_social_button"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="Withdraw Offer"
+                    android:textColor="#DC2626"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ================= PANEL 3: ACTIVE ACCEPTED JOB ================= -->
+        <LinearLayout
+            android:id="@+id/layoutActiveJobPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mechanic_job_card"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="18dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvActiveJobStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="⚡ En Route to Customer"
+                    android:textColor="#137333"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnCallCustomer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_status_badge_green"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="📞 Call"
+                    android:textColor="#137333"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvActiveCustomerDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Customer: Indula Perera\nLocation: Near Katunayake Exit"
+                android:textColor="#1F2937"
+                android:textSize="13sp" />
+
+            <FrameLayout
+                android:id="@+id/btnCompleteJob"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_login_btn"
+                android:clickable="true"
+                android:elevation="3dp"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:text="🏁 Complete Service &amp; Collect Payment"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ================= MECHANIC RECENT ACTIVITIES SCREEN LAYER (NAV TAB 2 & 3) ================= -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layoutMechanicRecentActivities"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/mechanicRecentActivitiesContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Curved Navy Header -->
+            <LinearLayout
+                android:id="@+id/mechanicRecentActivitiesHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_header"
+                android:orientation="vertical"
+                android:paddingStart="26dp"
+                android:paddingTop="52dp"
+                android:paddingEnd="26dp"
+                android:paddingBottom="40dp">
+
+                <TextView
+                    android:id="@+id/tvMechanicRecentActivitiesSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
+                    android:text="People Who Helped"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMechanicRecentActivitiesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
+                    android:text="Recent Activities"
+                    android:textColor="@color/white"
+                    android:textSize="38sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Activities Cards List Container -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMechanicRecentActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="120dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ================= MECHANIC MY EARNINGS / WALLET SCREEN LAYER (NAV TAB 3) ================= -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layoutMechanicEarnings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/mechanicEarningsContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Curved Navy Header -->
+            <LinearLayout
+                android:id="@+id/mechanicEarningsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_header"
+                android:orientation="vertical"
+                android:paddingStart="26dp"
+                android:paddingTop="52dp"
+                android:paddingEnd="26dp"
+                android:paddingBottom="42dp">
+
+                <TextView
+                    android:id="@+id/tvMechanicEarningsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
+                    android:text="My Earnings"
+                    android:textColor="@color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Earnings Body Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="22dp"
+                android:paddingTop="22dp"
+                android:paddingBottom="120dp">
+
+                <!-- 1. Date Selector Pill Button -->
+                <FrameLayout
+                    android:id="@+id/btnSelectEarningsDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_earnings_date_pill"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:minWidth="200dp"
+                    android:paddingHorizontal="28dp">
+
+                    <TextView
+                        android:id="@+id/tvSelectedEarningsDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-black"
+                        android:text="12 Sep 2026"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <!-- 2. Total Earnings Card -->
+                <LinearLayout
+                    android:id="@+id/layoutTotalEarningsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_earnings_total_card"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="26dp">
+
+                    <TextView
+                        android:id="@+id/tvTotalEarningsHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Total Earnings"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotalEarningsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="LKR 42,500 .00"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- 3. Earnings List RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMechanicEarnings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false" />
+
+                <!-- Empty State Message for selected date -->
+                <LinearLayout
+                    android:id="@+id/layoutEarningsEmptyState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvEarningsEmptyTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="No Earnings on this Date"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Tap the date selector above to pick another day or tap View More to see all records."
+                        android:textAlignment="center"
+                        android:textColor="@color/pitcrew_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- 4. View More Action -->
+                <TextView
+                    android:id="@+id/btnViewMoreEarnings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="6dp"
+                    android:text="View More >>"
+                    android:textColor="@color/pitcrew_navy"
+                    android:textSize="13.5sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ================= MECHANIC MY PROFILE SCREEN LAYER (NAV TAB 4) ================= -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layoutMechanicProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="12dp"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/mechanicProfileContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Curved Navy Header -->
+            <LinearLayout
+                android:id="@+id/mechanicProfileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_header"
+                android:orientation="vertical"
+                android:paddingStart="26dp"
+                android:paddingTop="52dp"
+                android:paddingEnd="26dp"
+                android:paddingBottom="42dp">
+
+                <TextView
+                    android:id="@+id/tvMechanicProfileTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
+                    android:text="My Profile"
+                    android:textColor="@color/white"
+                    android:textSize="38sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Profile Form Content Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="26dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="120dp">
+
+                <!-- Center Circular Profile Avatar -->
+                <ImageView
+                    android:id="@+id/ivMechanicProfileAvatarLarge"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="Mechanic Profile Picture"
+                    android:src="@drawable/ic_avatar_profile" />
+
+                <!-- Verified Partner Pill -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_status_badge_green"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:contentDescription="Verified"
+                        android:src="@drawable/ic_shield_check"
+                        app:tint="#137333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Verified Pitcrew Partner"
+                        android:textColor="#137333"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- ================= PERSONAL DETAILS ================= -->
+
+                <!-- First Name Label -->
+                <TextView
+                    android:id="@+id/tvMechanicFirstNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="First Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- First Name Input Box -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field">
+
+                    <EditText
+                        android:id="@+id/etMechanicFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:hint="First name"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName|textCapWords"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textColorHint="#8A92A0"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <!-- Last Name Label -->
+                <TextView
+                    android:id="@+id/tvMechanicLastNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Last Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Last Name Input Box -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field">
+
+                    <EditText
+                        android:id="@+id/etMechanicLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:hint="Last name"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName|textCapWords"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textColorHint="#8A92A0"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <!-- Phone Number Label -->
+                <TextView
+                    android:id="@+id/tvMechanicPhoneLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Phone Number"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Phone Number Input Box -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field">
+
+                    <EditText
+                        android:id="@+id/etMechanicPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:hint="Phone number"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="phone"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textColorHint="#8A92A0"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <!-- E mail Address Label -->
+                <TextView
+                    android:id="@+id/tvMechanicEmailLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="E mail Address"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- E mail Address Input Box -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field">
+
+                    <EditText
+                        android:id="@+id/etMechanicEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:hint="Email address"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textColorHint="#8A92A0"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <!-- ================= WORKSHOP & SERVICE DETAILS SECTION ================= -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="Workshop"
+                        android:src="@drawable/ic_wrench"
+                        app:tint="@color/pitcrew_navy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Workshop &amp; Service Details"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Workshop Name Label -->
+                <TextView
+                    android:id="@+id/tvMechanicShopNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Workshop / Business Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Workshop Name Input Box -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field">
+
+                    <EditText
+                        android:id="@+id/etMechanicShopName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:hint="e.g. Pitcrew Express Auto Care"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textColorHint="#8A92A0"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <!-- Workshop Address Label -->
+                <TextView
+                    android:id="@+id/tvMechanicShopAddressLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Registered Address / Location"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Workshop Address Input Box -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field">
+
+                    <EditText
+                        android:id="@+id/etMechanicShopAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:hint="e.g. Katunayake Highway Exit, Negombo Rd"
+                        android:imeOptions="actionDone"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/pitcrew_navy"
+                        android:textColorHint="#8A92A0"
+                        android:textSize="15sp" />
+                </FrameLayout>
+
+                <!-- ================= SAVE ACTION BUTTON ================= -->
+                <FrameLayout
+                    android:id="@+id/btnSaveMechanicProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/bg_login_btn"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/tvSaveMechanicProfileText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/pbSaveMechanicProfile"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <!-- Sign Out Option -->
+                <TextView
+                    android:id="@+id/btnMechanicProfileSignOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="10dp"
+                    android:text="Sign Out of Pitcrew"
+                    android:textColor="#E11D48"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ================= BOTTOM NAVIGATION BAR ================= -->
+    <LinearLayout
+        android:id="@+id/mechanicBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_floating_bottom_bar"
+        android:elevation="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Nav 1: Home -->
+        <FrameLayout
+            android:id="@+id/navMechanicHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/ivNavMechanicHome"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="Home"
+                android:src="@drawable/ic_nav_home" />
+        </FrameLayout>
+
+        <!-- Nav 2: Orders / Jobs -->
+        <FrameLayout
+            android:id="@+id/navMechanicOrders"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/ivNavMechanicOrders"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="Jobs"
+                android:src="@drawable/ic_nav_list" />
+        </FrameLayout>
+
+        <!-- Nav 3: Wallet / Earnings -->
+        <FrameLayout
+            android:id="@+id/navMechanicWallet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/ivNavMechanicWallet"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="Earnings"
+                android:src="@drawable/ic_nav_wallet" />
+        </FrameLayout>
+
+        <!-- Nav 4: Profile -->
+        <FrameLayout
+            android:id="@+id/navMechanicProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/ivNavMechanicProfile"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="Profile"
+                android:src="@drawable/ic_nav_person" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/roleSelectionRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".RoleSelectionActivity">
+
+    <!-- Top Guideline for Logo -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <!-- Pitcrew Brand Logo -->
+    <ImageView
+        android:id="@+id/ivRoleLogo"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_pitcrew_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineLogo" />
+
+    <!-- Button Container in Center -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRoleLogo"
+        app:layout_constraintVertical_bias="0.38"
+        app:layout_constraintWidth_max="420dp">
+
+        <!-- Button 1: I am a User -->
+        <FrameLayout
+            android:id="@+id/btnIamUser"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:background="@drawable/bg_role_selection_btn"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.02"
+                android:text="I am a User"
+                android:textColor="#FFFFFF"
+                android:textSize="16.5sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Button 2: I am a Mechanic -->
+        <FrameLayout
+            android:id="@+id/btnIamMechanic"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_role_selection_btn"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.02"
+                android:text="I am a Mechanic"
+                android:textColor="#FFFFFF"
+                android:textSize="16.5sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

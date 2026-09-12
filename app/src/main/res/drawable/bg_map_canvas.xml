@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="480dp"
+    android:viewportWidth="360"
+    android:viewportHeight="480">
+
+    <!-- Base Map Background (Light Urban Beige/Grey) -->
+    <path
+        android:fillColor="#ECEEEF"
+        android:pathData="M0,0h360v480h-360z" />
+
+    <!-- Urban Building Blocks / Zones (Subtle warm blocks) -->
+    <path
+        android:fillColor="#E3E6E8"
+        android:pathData="M15,10h50v60h-50z M75,10h80v60h-80z M165,10h70v60h-70z M245,10h80v60h-80z" />
+    <path
+        android:fillColor="#E3E6E8"
+        android:pathData="M15,80h60v80h-60z M85,80h80v80h-80z M175,80h70v80h-70z M255,80h80v80h-80z" />
+    <path
+        android:fillColor="#E3E6E8"
+        android:pathData="M10,180h70v90h-70z M90,180h80v90h-80z M180,180h70v90h-70z M260,180h80v90h-80z" />
+    <path
+        android:fillColor="#E3E6E8"
+        android:pathData="M10,290h70v100h-70z M90,290h80v100h-80z M180,290h70v100h-70z M260,290h80v100h-80z" />
+
+    <!-- Subtle Yellowish Parcels / Commercial lots -->
+    <path
+        android:fillColor="#F6EDDC"
+        android:pathData="M20,20h30v25h-30z M95,25h40v35h-40z M185,25h35v45h-35z M265,30h40v40h-40z" />
+    <path
+        android:fillColor="#F6EDDC"
+        android:pathData="M100,95h50v45h-50z M265,95h50v55h-50z M25,200h45v45h-45z M100,200h50v45h-50z M270,200h50v55h-50z" />
+
+    <!-- Green Park Area near Antioch St intersection -->
+    <path
+        android:fillColor="#C8E6C9"
+        android:pathData="M165,180 L195,180 L195,205 L165,205 Z" />
+
+    <!-- Secondary Streets (Grey-Blue road lines) -->
+    <path
+        android:strokeColor="#CED5DC"
+        android:strokeWidth="10"
+        android:strokeLineCap="square"
+        android:pathData="M0,75 L360,75 M0,175 L360,175 M0,285 L360,285 M0,400 L360,400" />
+    <path
+        android:strokeColor="#CED5DC"
+        android:strokeWidth="10"
+        android:strokeLineCap="square"
+        android:pathData="M70,0 L70,480 M160,0 L160,480 M240,0 L240,480" />
+
+    <!-- Primary Diagonal Avenues (Pacific Palisades Ave / Diagonal Boulevard) -->
+    <path
+        android:strokeColor="#CBD3DB"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:pathData="M310,0 L170,190 L10,340" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:pathData="M310,0 L170,190 L10,340" />
+
+    <!-- Primary Crossing Street (Antioch St) -->
+    <path
+        android:strokeColor="#CBD3DB"
+        android:strokeWidth="14"
+        android:strokeLineCap="round"
+        android:pathData="M0,175 L360,225" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="8"
+        android:strokeLineCap="round"
+        android:pathData="M0,175 L360,225" />
+
+    <!-- Street Lines (Inner White asphalt) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:pathData="M0,75 L360,75 M0,285 L360,285 M70,0 L70,480 M160,0 L160,480 M240,0 L240,480" />
+
+    <!-- Subtle Radar Cone Glow from Pin (pointing Southeast) -->
+    <path
+        android:fillColor="#30007AFF"
+        android:pathData="M195,190 L260,230 L230,260 Z" />
+
+</vector>

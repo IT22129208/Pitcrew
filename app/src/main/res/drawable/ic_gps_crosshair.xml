@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+    <!-- Outer Ring -->
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="3.2"
+        android:pathData="M22,6 A16,16 0 1,0 22,38 A16,16 0 1,0 22,6 Z" />
+    <!-- Center Dot -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M22,17 A5,5 0 1,0 22,27 A5,5 0 1,0 22,17 Z" />
+    <!-- Crosshairs (4 cardinal ticks) -->
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:pathData="M22,2 L22,7 M22,37 L22,42 M2,22 L7,22 M37,22 L42,22" />
+</vector>

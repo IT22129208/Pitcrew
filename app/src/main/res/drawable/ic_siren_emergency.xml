@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+    <!-- Siren Top light bulb / dome -->
+    <path
+        android:fillColor="#FF2E2E"
+        android:strokeColor="#FF2E2E"
+        android:strokeWidth="1.5"
+        android:pathData="M22,10 C16.5,10 14,14 14,21 L30,21 C30,14 27.5,10 22,10 Z" />
+    <!-- Siren Base -->
+    <path
+        android:fillColor="#FF2E2E"
+        android:pathData="M12,22 L32,22 C33.1,22 34,22.9 34,24 L34,26 C34,27.1 33.1,28 32,28 L12,28 C10.9,28 10,27.1 10,26 L10,24 C10,22.9 10.9,22 12,22 Z" />
+    <!-- Top beacon small cap -->
+    <path
+        android:fillColor="#FF2E2E"
+        android:pathData="M20.5,7 L23.5,7 C24,7 24.5,7.5 24.5,8 L24.5,10 L19.5,10 L19.5,8 C19.5,7.5 20,7 20.5,7 Z" />
+    <!-- Sound / Warning Wave Rays Left -->
+    <path
+        android:strokeColor="#FF2E2E"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M7,12 C4,16 4,22 7,26 M10,8 L8,6" />
+    <!-- Sound / Warning Wave Rays Right -->
+    <path
+        android:strokeColor="#FF2E2E"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M37,12 C40,16 40,22 37,26 M34,8 L36,6" />
+    <!-- Top vertical ray -->
+    <path
+        android:strokeColor="#FF2E2E"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M22,4 L22,2" />
+</vector>

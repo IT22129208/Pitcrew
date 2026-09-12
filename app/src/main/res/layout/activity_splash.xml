@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_ambient"
+    tools:context=".SplashActivity">
+
+    <!-- Center Brand Container -->
+    <LinearLayout
+        android:id="@+id/brandContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48">
+
+        <!-- PITCREW Brand Logo Wordmark -->
+        <ImageView
+            android:id="@+id/ivPitcrewLogo"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_pitcrew_logo" />
+
+        <!-- Sub-tagline -->
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.18"
+            android:text="YOUR ON-DEMAND AUTO CARE"
+            android:textColor="@color/pitcrew_text_secondary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- Animated Progress Indicator -->
+        <ProgressBar
+            android:id="@+id/splashProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="28dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_splash_progress" />
+
+    </LinearLayout>
+
+    <!-- Bottom Customer Edition Badge & Tag -->
+    <LinearLayout
+        android:id="@+id/bottomContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Customer Pill Badge -->
+
+        <TextView
+            android:id="@+id/tvFooterSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.05"
+            android:text="@string/powered_by_pitcrew"
+            android:textColor="@color/pitcrew_text_tertiary"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer White Ring -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF" />
+            <size
+                android:width="26dp"
+                android:height="26dp" />
+            <stroke
+                android:width="1dp"
+                android:color="#B0C4DE" />
+        </shape>
+    </item>
+    <!-- Inner Bright Blue Location Dot -->
+    <item
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp">
+        <shape android:shape="oval">
+            <solid android:color="#007AFF" />
+            <size
+                android:width="18dp"
+                android:height="18dp" />
+        </shape>
+    </item>
+</layer-list>

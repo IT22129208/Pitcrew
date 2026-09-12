@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Engine Block Outline -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeWidth="3"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M18,12 L30,12 M20,12 L20,8 L28,8 L28,12 M14,16 L18,16 M30,16 L34,16 M14,16 L14,22 L10,22 L10,26 L6,26 L6,34 L10,34 L10,38 L14,38 L14,40 L34,40 L34,38 L38,38 L38,34 L42,34 L42,26 L38,26 L38,22 L34,22 L34,16" />
+    <!-- Lightning Bolt inside engine -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M25,18 L19,27 L24,27 L22,34 L29,25 L24,25 Z" />
+</vector>

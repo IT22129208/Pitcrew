@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Circular White Background with Dark Outline -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#738A9C"
+        android:strokeWidth="1.8"
+        android:pathData="M24,2 A22,22 0 1,0 24,46 A22,22 0 1,0 24,2 Z" />
+    <!-- Hair -->
+    <path
+        android:fillColor="#C68A4C"
+        android:pathData="M24,11 C17,11 15,16 15,22 C16,21 18,20 20,21 C22,20 26,20 28,21 C30,20 32,21 33,22 C33,16 31,11 24,11 Z" />
+    <!-- Face / Head -->
+    <path
+        android:fillColor="#F6C582"
+        android:pathData="M24,17 C19.5,17 18,20 18,25 C18,30 20.7,34 24,34 C27.3,34 30,30 30,25 C30,20 28.5,17 24,17 Z" />
+    <!-- Neck & Shoulders -->
+    <path
+        android:fillColor="#F6C582"
+        android:pathData="M21,32 L27,32 L28,37 L20,37 Z" />
+    <path
+        android:fillColor="#D8E2EC"
+        android:pathData="M14,44 C14,38 18,36 24,36 C30,36 34,38 34,44 Z" />
+</vector>

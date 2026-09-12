@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PitcrewA1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pitcrew_navy_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/pitcrew_blue_accent</item>
+    </style>
+
+    <style name="Theme.PitcrewA1" parent="Base.Theme.PitcrewA1" />
+    <style name="Theme.Pitcrew" parent="Base.Theme.PitcrewA1" />
+
+    <style name="Theme.Pitcrew.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet_panel"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="28dp">
+
+        <!-- Dialog Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Add New Card"
+            android:textColor="#091438"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Enter card details for instant roadside payment"
+        android:textColor="@color/pitcrew_text_secondary"
+        android:textSize="12sp" />
+
+    <!-- Card Number -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Card Number"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input_field">
+
+        <EditText
+            android:id="@+id/etDialogCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:hint="1234 5678 9012 3456"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="19"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/pitcrew_navy"
+            android:textColorHint="#8A92A0"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <!-- Cardholder Name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Cardholder Name"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_input_field">
+
+        <EditText
+            android:id="@+id/etDialogCardHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:hint="e.g. Silva HSN"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters|textPersonName"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/pitcrew_navy"
+            android:textColorHint="#8A92A0"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <!-- Expiry Date & CVV Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal">
+
+        <!-- Expiry Date -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Expires (MM/YY)"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field">
+
+                <EditText
+                    android:id="@+id/etDialogCardExpiry"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:hint="29/09"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="@color/pitcrew_navy"
+                    android:textColorHint="#8A92A0"
+                    android:textSize="14sp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- CVV -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="CVV / CVC"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field">
+
+                <EditText
+                    android:id="@+id/etDialogCardCvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:hint="•••"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="@color/pitcrew_navy"
+                    android:textColorHint="#8A92A0"
+                    android:textSize="14sp" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Save Card Action Button -->
+    <FrameLayout
+        android:id="@+id/btnDialogSaveCard"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/bg_login_btn"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/tvDialogSaveCardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:text="Save Card"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/pbDialogSaveCard"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer tire tread -->
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="M24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,12.95 35.05,4 24,4 Z M24,8 C32.84,8 40,15.16 40,24 C40,32.84 32.84,40 24,40 C15.16,40 8,32.84 8,24 C8,15.16 15.16,8 24,8 Z" />
+    <!-- Inner Rim ring -->
+    <path
+        android:fillColor="#000000"
+        android:fillType="evenOdd"
+        android:pathData="M24,12 C17.37,12 12,17.37 12,24 C12,30.63 17.37,36 24,36 C30.63,36 36,30.63 36,24 C36,17.37 30.63,12 24,12 Z M24,15 C28.97,15 33,19.03 33,24 C33,28.97 28.97,33 24,33 C19.03,33 15,28.97 15,24 C15,19.03 19.03,15 24,15 Z" />
+    <!-- Hub center -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M24,20 A4,4 0 1,0 24,28 A4,4 0 1,0 24,20 Z" />
+    <!-- Wheel spokes -->
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M24,15 L24,20 M24,28 L24,33 M15,24 L20,24 M28,24 L33,24 M17.6,17.6 L21.2,21.2 M26.8,26.8 L30.4,30.4 M30.4,17.6 L26.8,21.2 M21.2,26.8 L17.6,30.4" />
+</vector>

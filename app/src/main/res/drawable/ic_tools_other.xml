@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Crossed Wrench & Screwdriver -->
+    <!-- Screwdriver -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M34,8 L40,14 L28,26 L24,24 L22,20 L34,8 Z M22,22 L10,34 L8,40 L14,38 L26,26" />
+    <!-- Wrench -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14,8 C12,8 9.5,9.5 8,11.5 L12,15.5 L11,18 L8.5,19 L4.5,15 C4,17 4.5,20 6.5,22 C8.5,24 11.5,24.5 13.5,24 L26,36.5 C27.5,38 30,38 31.5,36.5 L36.5,31.5 C38,30 38,27.5 36.5,26 L24,13.5 C24.5,11.5 24,8.5 22,6.5 C20,4.5 17,4 15,4.5 L19,8.5 L18,11 L15.5,12 L11.5,8 C12.5,8 13.5,8 14,8 Z" />
+</vector>

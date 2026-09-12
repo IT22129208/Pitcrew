@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Pitcrew</string>
+    <string name="app_tagline">Your On-Demand Vehicle Care Partner</string>
+    <string name="customer_edition">CUSTOMER APP • v1.0.0</string>
+    <string name="powered_by_pitcrew">Fast • Reliable • Professional</string>
+    
+    <!-- Customer Home Strings -->
+    <string name="greeting_customer">Hello, Alex</string>
+    <string name="customer_subtitle">Need auto service today?</string>
+    <string name="current_vehicle">2023 BMW M4 Competition</string>
+    <string name="vehicle_status">All Systems Healthy</string>
+    <string name="emergency_request">Request Emergency Roadside</string>
+    <string name="emergency_eta">Mechanic arrives in ~12 mins</string>
+    <string name="services_header">Our Services</string>
+    <string name="service_oil">Oil &amp; Filter</string>
+    <string name="service_tire">Tire Service</string>
+    <string name="service_battery">Battery Jump</string>
+    <string name="service_diagnostics">Diagnostics</string>
+    <string name="service_brakes">Brakes &amp; Fluid</string>
+    <string name="service_detailing">Detailing</string>
+    <string name="recent_activity">Upcoming Appointment</string>
+    <string name="appointment_title">Comprehensive Maintenance</string>
+    <string name="appointment_date">Tomorrow at 10:30 AM • Home Service</string>
+</resources>

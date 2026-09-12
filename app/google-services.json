@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "583132227343",
+    "project_id": "pitcrewa1",
+    "storage_bucket": "pitcrewa1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583132227343:android:44982615340954ca84c07a",
+        "android_client_info": {
+          "package_name": "com.example.pitcrewa1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQdvOPO_8eK0eNJDJYyDspWmsC1CvaZAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/bg_activity_card"
+    android:elevation="3dp"
+    android:orientation="vertical"
+    android:paddingStart="22dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="20dp">
+
+    <!-- Masked Card Number -->
+    <TextView
+        android:id="@+id/tvCardMaskedNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="0.04"
+        android:text="10xx xxxx xxxx xx99"
+        android:textColor="#09133E"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="10xx xxxx xxxx xx99" />
+
+    <!-- Bottom Row: Cardholder, Expiry, Brand Badge -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Cardholder Name -->
+        <TextView
+            android:id="@+id/tvCardHolderName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:fontFamily="sans-serif-black"
+            android:text="Silva HSN"
+            android:textColor="#09133E"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Silva HSN" />
+
+        <!-- Expiry Date -->
+        <TextView
+            android:id="@+id/tvCardExpiry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="29/09"
+            android:textColor="#09133E"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="29/09" />
+
+        <!-- Card Network Badge (e.g. VISA) -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_visa_badge"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/tvCardTypeBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.06"
+                android:text="VISA"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold|italic" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

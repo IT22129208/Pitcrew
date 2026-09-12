@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="24dp"
+    android:viewportWidth="36"
+    android:viewportHeight="24">
+    <!-- Outer Ring (Unchecked) -->
+    <path
+        android:strokeColor="#738191"
+        android:strokeWidth="2.5"
+        android:pathData="M12,3 A9,9 0 1,0 12,21 A9,9 0 1,0 12,3 Z" />
+    <!-- Dash line connecting to text -->
+    <path
+        android:strokeColor="#738191"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M23,12 L33,12" />
+</vector>

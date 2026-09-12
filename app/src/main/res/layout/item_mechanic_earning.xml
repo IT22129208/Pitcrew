@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/bg_earning_item_card"
+    android:clickable="true"
+    android:elevation="2dp"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="18dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp">
+
+    <!-- Top Date Line -->
+    <TextView
+        android:id="@+id/tvEarningItemDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.02"
+        android:text="July 29, 2026"
+        android:textColor="#E0E7FF"
+        android:textSize="11.5sp"
+        tools:text="July 29, 2026" />
+
+    <!-- Content Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Left: Circle Outline Icon & Location/Details -->
+        <ImageView
+            android:id="@+id/ivEarningDot"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Location Dot"
+            android:src="@drawable/ic_circle_outline"
+            app:tint="#E0E7FF" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvEarningLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-black"
+                android:maxLines="1"
+                android:text="Near Katunayake Exit"
+                android:textColor="@color/white"
+                android:textSize="13.5sp"
+                android:textStyle="bold"
+                tools:text="Near Katunayake Exit" />
+
+            <TextView
+                android:id="@+id/tvEarningCause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:text="Low fuel · Vehicle Import"
+                android:textColor="#CBD5E1"
+                android:textSize="10.5sp"
+                tools:text="Low fuel · Vehicle Import" />
+        </LinearLayout>
+
+        <!-- Right: Amount & Customer/Station Name -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvEarningAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="end"
+                android:text="LKR 6,580.00"
+                android:textColor="@color/white"
+                android:textSize="13.5sp"
+                android:textStyle="bold"
+                tools:text="LKR 6,580.00" />
+
+            <TextView
+                android:id="@+id/tvEarningCustomerOrStation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="IOC Gas Station"
+                android:textColor="#CBD5E1"
+                android:textSize="10.5sp"
+                tools:text="IOC Gas Station" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

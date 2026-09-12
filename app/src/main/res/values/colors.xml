@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Primary Colors (Matching PITCREW dark navy logo) -->
+    <color name="pitcrew_navy">#060C3B</color>
+    <color name="pitcrew_navy_dark">#030720</color>
+    <color name="pitcrew_navy_light">#101C5C</color>
+    <color name="pitcrew_navy_surface">#0A1344</color>
+
+    <!-- Brand Accent Colors -->
+    <color name="pitcrew_blue_accent">#0066FF</color>
+    <color name="pitcrew_cyan_accent">#00D2FF</color>
+    <color name="pitcrew_orange_urgent">#FF6B00</color>
+    <color name="pitcrew_green_success">#10B981</color>
+
+    <!-- Backgrounds & Surfaces -->
+    <color name="pitcrew_bg_light">#FFFFFF</color>
+    <color name="pitcrew_bg_subtle">#F8FAFC</color>
+    <color name="pitcrew_card_bg">#FFFFFF</color>
+    <color name="pitcrew_card_stroke">#E2E8F0</color>
+    
+    <!-- Typography Colors -->
+    <color name="pitcrew_text_primary">#060C3B</color>
+    <color name="pitcrew_text_secondary">#64748B</color>
+    <color name="pitcrew_text_tertiary">#94A3B8</color>
+    <color name="pitcrew_text_white">#FFFFFF</color>
+
+    <!-- Base / Material Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="splash_progress_track">#E2E8F0</color>
+    <color name="splash_progress_indicator">#060C3B</color>
+</resources>
